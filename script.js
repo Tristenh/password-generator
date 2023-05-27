@@ -4,6 +4,20 @@ let upperCaseList = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 let numberList = ("1234567890");
 let specialList = ("!#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
 
+function generatePassword(){
+ if (confirm("you want lower case characters ?")){
+  lowerCaseList;
+ }
+ if (confirm("you want upper case characters ?")){
+upperCaseList;
+}
+ if (confirm("you want number characters ?")){
+numberList;
+}
+ if (confirm("you want special characters ?")){
+specialList;
+}
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
