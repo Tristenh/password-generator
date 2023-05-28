@@ -3,7 +3,6 @@ let lowerCaseList = ("abcdefghijklmnopqrstuvwxyz");
 let upperCaseList = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 let numberList = ("1234567890");
 let specialList = ("!#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
-password = "";
 
 function restartPrompt(){
   while(true){
@@ -16,33 +15,32 @@ function restartPrompt(){
     }
   }
 };
-
 function generatePassword(){
-  let range = restartPrompt();
- if (confirm("you want lower case characters ?")){
-  password += lowerCaseList;
-  console.log(range)
- }
- if (confirm("you want upper case characters ?")){
-  password += upperCaseList;
-}
- if (confirm("you want number characters ?")){
-  password += numberList;
-}
- if (confirm("you want special characters ?")){
-  password += specialList;
-}
-if (password === ""){
-  alert("you need to pick at least one option")
-}
-console.log(password)
-return
+  let characterList = "";
+  if (confirm("you want lower case characters ?")){
+    characterList += lowerCaseList;
+  }
+  if (confirm("you want upper case characters ?")){
+    characterList += upperCaseList;
+  }
+  if (confirm("you want number characters ?")){
+    characterList += numberList;
+  }
+  if (confirm("you want special characters ?")){
+    characterList += specialList;
+  }
+  if (password === ""){
+    alert("you need to pick at least one option")
+  }
+  console.log(characterList)
+  return characterList
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  restartPrompt()
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
