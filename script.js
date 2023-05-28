@@ -5,6 +5,17 @@ let numberList = ("1234567890");
 let specialList = ("!#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
 password = "";
 
+function restartPrompt(){
+  while(true){
+    let range = prompt("Enter range between 8 and 126");
+    if ((range < 8) || (range > 126)){
+      alert("Invalid range, please try again")
+    }
+    else{
+      break
+    }
+  }
+};
 function generatePassword(){
  if (confirm("you want lower case characters ?")){
   password += lowerCaseList;
@@ -31,10 +42,11 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  restartPrompt()
   var password = generatePassword();
+  restart();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  restart();
 }
 
 // Add event listener to generate button
