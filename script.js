@@ -17,7 +17,6 @@ function rangeSet(){
 };
 function generatePassword(){
   let range = rangeSet()
-  console.log(range)
   let characterList = "";
   if (confirm("you want lower case characters ?")){
     characterList += lowerCaseList;
@@ -31,11 +30,16 @@ function generatePassword(){
   if (confirm("you want special characters ?")){
     characterList += specialList;
   }
-  if (password === ""){
+  if (characterList === ""){
     alert("you need to pick at least one option")
+    return characterList
   }
-  console.log(characterList)
-  return characterList
+  let password = ""
+  for (let i = 0; i < range; i ++){
+    let randomIndex = Math.floor(Math.random() *characterList.length)
+    password += characterList[randomIndex];
+  }
+  return password;
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
