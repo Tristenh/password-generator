@@ -1,9 +1,12 @@
 // Assignment code here
+
+// character Lists
 let lowerCaseList = ("abcdefghijklmnopqrstuvwxyz");
 let upperCaseList = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 let numberList = ("1234567890");
 let specialList = ("!#$%&'()*+,-./:;<=>?@[\]^_`{|}~");
 
+//  Range selection
 function rangeSet(){
   while(true){
     let range = prompt("Enter range between 8 and 126");
@@ -15,6 +18,8 @@ function rangeSet(){
     }
   }
 };
+
+// Criteria selection
 function generatePassword(){
   let range = rangeSet()
   let characterList = "";
@@ -34,6 +39,8 @@ function generatePassword(){
     alert("you need to pick at least one option")
     return characterList
   }
+
+  // Random character generator
   let password = ""
   for (let i = 0; i < range; i ++){
     let randomIndex = Math.floor(Math.random() *characterList.length)
