@@ -21,10 +21,11 @@ function generatePassword(){
 if (password === ""){
   alert("you need to pick at least one option")
 }
-else(confirm === "false")
-  password = ""
+console.log(password)
 }
-
+function restart (){
+ startOver = password = "";
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -33,9 +34,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  
-  
+  restart();
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
