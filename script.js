@@ -33,9 +33,7 @@ if (password === ""){
   alert("you need to pick at least one option")
 }
 console.log(password)
-}
-function restart (){
- startOver = password = "";
+return
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -44,7 +42,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   restartPrompt()
   var password = generatePassword();
-  restart();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
