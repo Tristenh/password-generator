@@ -12,13 +12,16 @@ function restartPrompt(){
       alert("Invalid range, please try again")
     }
     else{
-      break
+      return range
     }
   }
 };
+
 function generatePassword(){
+  let range = restartPrompt();
  if (confirm("you want lower case characters ?")){
   password += lowerCaseList;
+  console.log(range)
  }
  if (confirm("you want upper case characters ?")){
   password += upperCaseList;
@@ -40,7 +43,6 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  restartPrompt()
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
